@@ -20,22 +20,14 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val textView = findViewById<TextView>(R.id.textView)
-        val plusButton = findViewById<Button>(R.id.plus)
-        val minusButton = findViewById<Button>(R.id.minus)
-        
-        textView.setText("Hello, Android!")
-        var total = 0
-        
-        plusButton.setOnClickListener{
-            total++
-            textView.setText(total.toString())
+        val vraiButton = findViewById<Button>(R.id.vrai)
+        vraiButton.setOnClickListener{
+            Toast.makeText(this, "❌ Mauvaise Réponse", Toast.LENGTH_SHORT).show()
         }
-        minusButton.setOnClickListener{
-            total--
-            textView.setText(total.toString())
+        val fauxButton = findViewById<Button>(R.id.faux)
+        fauxButton.setOnClickListener{
+            Toast.makeText(this, "✔️ Bonne Réponse", Toast.LENGTH_SHORT).show()
         }
-        
 
     }
 }
